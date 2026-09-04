@@ -1,0 +1,26 @@
+services:
+  db:
+    image: postgres:16
+    container_name: health_db
+    restart: always
+    env_file: .env
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  api:
+    build: ./backend-nexus
+    container_name: health_api
+    env_file: .env
+    environment:
+      - UVICORN_RELOAD=true
+    volumes:
+      - ./backend-nexus:/app
+    ports:
+      - '8000:8000'
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:

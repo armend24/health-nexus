@@ -1,0 +1,39 @@
+node_modules
+.tanstack
+.vite
+.DS_Store
+.cursor
+.claude
+
+# Env
+.env
+.env.local
+
+# Python
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+
+# Virtual env
+venv/
+backend-nexus/.venv/
+
+# Logs
+*.log
+
+# SQLite
+*.db
+*.sqlite3
+
+# Pytest
+.pytest_cache/
+
+# Coverage
+.coverage
+
+# Backend specifics
+backend-nexus/.env.example
+
+# Uploaded files (local storage)
+backend-nexus/uploads/
